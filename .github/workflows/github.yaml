@@ -1,35 +1,30 @@
-name: Deploy django lên gigalixir.com
+name: 'Gigalixir Action'
+description: 'Deploy to Gigalixir'
+inputs:
+  APP_SUBFOLDER:
+    description: 'Subfolder of your app'
+    required: false
+  GIGALIXIR_APP:
+    description: 'Your gigalixir app name'
+    required: true
+  GIGALIXIR_CLEAN:
+    description: 'Extra flag you can pass to clean your cache before building'
+    required: false
+    default: false
+  GIGALIXIR_USERNAME:
+    description: 'Your Gigalixir username'
+    required: true
+  GIGALIXIR_PASSWORD:
+    description: 'Your Gigalixir password'
+    required: true
+  MIGRATIONS:
+    description: 'Configuration for migrations'
+    required: true
+    default: true
+  SSH_PRIVATE_KEY:
+    description: 'Your ssh private key that is paired with a public key that is uploaded to Gigalixir'
+    required: ${MIGRATIONS}
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py runserver
-    with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gigalixir.com
-        FOLDER: build
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
