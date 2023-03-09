@@ -1,0 +1,2 @@
+web: gunicorn emykh wsgi
+release: python manage.py migrate,python manage.py startapp,python manage.py makemigrations
