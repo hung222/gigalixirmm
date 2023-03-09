@@ -1,4 +1,4 @@
-name: Deploy django lên gigalixi.com
+name: Deploy django lên gigalixir.com
 
 on:
   push:
