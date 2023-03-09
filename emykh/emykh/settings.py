@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i$#)k)gw9ios=u&%$7vqp4t$c5e+bk_*9uuugje#o4at@1y^cr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*",]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,14 +76,13 @@ WSGI_APPLICATION = 'emykh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgres',
-        'NAME': '
+        'NAME': '728c7895-caba-45ac-a9f8-baa813bf2535-user
 ',
-         'PASS':'
-pw-77ce0219-f4f5-49d2-89a3-8a90185c13e5',
-         'HOST';'
-postgres-free-tier-v2020.gigalixir.com',
+         'PASSword':'
+pw-9b6f4202-8766-4068-abd0-e113f536fc86',
+         'HOST';'postgres-free-tier-v2020.gigalixir.com',
         'PORT':'5432',
-         'DATABASE':'7958d674-699e-4ebe-bfeb-013871ecaa69',
+         'DATABASE':'728c7895-caba-45ac-a9f8-baa813bf2535',
     }
 }
 
