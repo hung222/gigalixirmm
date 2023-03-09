@@ -1,4 +1,4 @@
 web: gunicorn emykh wsgi
 release: python manage.py migrate,python manage.py startapp,python manage.py makemigrations
 
-"homepage": "https://www.ttmn.giagialixir.com",
+"homepage": "http://www.ttmn.giagialixir.com",
